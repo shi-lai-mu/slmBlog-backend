@@ -12,6 +12,7 @@ logs/
 *.js
 !.autod.conf.js
 config.mysql.ts
+config.default.ts
 
 app/**/*.js
 test/**/*.js
