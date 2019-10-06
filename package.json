@@ -1,7 +1,7 @@
 {
-  "name": "slmblogBackend",
+  "name": "slmblog_backend",
   "version": "1.0.0",
-  "description": "史莱姆的博客后端",
+  "description": "slm blog",
   "private": true,
   "egg": {
     "typescript": true,
@@ -22,8 +22,11 @@
     "clean": "ets clean"
   },
   "dependencies": {
-    "egg": "^2.6.1",
-    "egg-scripts": "^2.6.0"
+    "egg": "^2.15.1",
+    "egg-cors": "^2.2.0",
+    "egg-mysql": "^3.0.0",
+    "egg-scripts": "^2.11.0",
+    "jsencrypt": "^3.0.0-rc.1"
   },
   "devDependencies": {
     "@types/mocha": "^2.2.40",
@@ -31,9 +34,10 @@
     "@types/supertest": "^2.0.0",
     "autod": "^3.0.1",
     "autod-egg": "^1.1.0",
-    "egg-ci": "^1.8.0",
     "egg-bin": "^4.11.0",
+    "egg-ci": "^1.8.0",
     "egg-mock": "^3.16.0",
+    "egg-mysql": "^3.0.0",
     "tslib": "^1.9.0",
     "tslint": "^5.0.0",
     "tslint-config-egg": "^1.0.0",
@@ -49,7 +53,9 @@
     "type": "git",
     "url": ""
   },
-  "eslintIgnore": ["coverage"],
+  "eslintIgnore": [
+    "coverage"
+  ],
   "author": "shilaimu",
   "license": "MIT"
 }

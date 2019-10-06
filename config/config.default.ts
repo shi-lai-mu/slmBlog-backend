@@ -1,8 +1,23 @@
 import { EggAppConfig, EggAppInfo, PowerPartial } from 'egg';
-import mysqlConfig from './config.mysql'
+// import mysql from './config.mysql'
 
 export default (appInfo: EggAppInfo) => {
   const config = {
+    // 数据库
+    mysql: {
+      client: {
+        // host
+        host: 'rm-bp11sat0d607f9qe2ro.mysql.rds.aliyuncs.com',
+        // 端口号
+        port: '3306',
+        // 用户名
+        user: 'root',
+        // 密码
+        password: 'Allselect666',
+        // 数据库名
+        database: `${process.env.NODE_ENV === 'development' ? 'test_' : ''}bbs`,
+      },
+    },
 
     // CORS 跨域解决
     security: {
@@ -37,6 +52,5 @@ export default (appInfo: EggAppInfo) => {
   return {
     ...config,
     ...bizConfig,
-    mysql: mysqlConfig,
   };
 };

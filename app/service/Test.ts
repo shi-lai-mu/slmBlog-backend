@@ -10,6 +10,11 @@ export default class Test extends Service {
    * @param name - your name
    */
   public async sayHi(name: string) {
+    console.log(
+      this.app
+    );
+    
+    console.log(await this.app.mysql.select('bbs_user'))
     return `hi, ${name}`;
   }
 }
