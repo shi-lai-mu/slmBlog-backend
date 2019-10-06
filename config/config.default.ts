@@ -1,7 +1,25 @@
 import { EggAppConfig, EggAppInfo, PowerPartial } from 'egg';
+import mysqlConfig from './config.mysql'
 
 export default (appInfo: EggAppInfo) => {
-  const config = {} as PowerPartial<EggAppConfig>;
+  const config = {
+
+    // CORS 跨域解决
+    security: {
+      csrf: {
+        enable: false,
+        ignoreJSON: true,
+      },
+      domainWhiteList: [ '*' ],
+    },
+
+    cors: {
+      origin: '*',
+      allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH',
+      credentials: true,
+    },
+
+  } as PowerPartial<EggAppConfig>;
 
   // override config from framework / plugin
   // use for cookie sign key, should change to your own and keep security
@@ -19,5 +37,6 @@ export default (appInfo: EggAppInfo) => {
   return {
     ...config,
     ...bizConfig,
+    mysql: mysqlConfig,
   };
 };
